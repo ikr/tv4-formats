@@ -47,4 +47,18 @@ describe('tv4-formats', function () {
             assert(formats['date-time']('2013-W06-5T09:30:26 Z').length > 0);
         });
     });
+
+    describe('email', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats.email, 'function');
+        });
+
+        it('validates positively', function () {
+            assert.strictEqual(formats.email('ivan.krechetov+special-tag@gmail.com'), null);
+        });
+
+        it('validates negatively', function () {
+            assert(formats.email('#not_an_email').length > 0);
+        });
+    });
 });
