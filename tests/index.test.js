@@ -61,4 +61,18 @@ describe('tv4-formats', function () {
             assert(formats.email('#not_an_email').length > 0);
         });
     });
+
+    describe('uri', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats.uri, 'function');
+        });
+
+        it('validates positively', function () {
+            assert.strictEqual(formats.uri('http://krechetov.net/'), null);
+        });
+
+        it('validates negatively', function () {
+            assert(formats.email('+41 43 000 00 00').length > 0);
+        });
+    });
 });

@@ -30,4 +30,12 @@
 
         return 'E-mail address expected';
     };
+
+    exports.uri = function (value) {
+        if (validator.isURL(value)) {
+            return null;
+        }
+
+        return 'URI expected';
+    };
 }());
