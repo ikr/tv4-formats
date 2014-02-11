@@ -7,7 +7,8 @@ Thus, it's a plug-in for [tv4.](https://github.com/geraintluff/tv4)
 
 # Usage
 
-First, install it, together with tv4 validator itself, via Node.js'es `npm` into your project
+First, install it, together with tv4 itself, via Node.js'es [npm](https://www.npmjs.org/) into your
+project
 
     npm install --save tv4 tv4-formats
 
@@ -20,7 +21,8 @@ Then, in the code
         schema = {type: 'string', format: 'date'};
 
     validator.addFormat(formats);
-    validator.validate('2014-02-11', schema);
+    assert(validator.validate('2014-02-11', schema));  // Valid ISO 8601 date
+    assert(!validator.validate('2014-02-29', schema)); // Invalid. Only 28 days in this February
 
 Here, the `format: 'date'` part of the schema validation is provided by `tv4-formats` package.
 
