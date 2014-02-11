@@ -25,4 +25,26 @@ describe('tv4-formats', function () {
             assert(formats.date('BOO!').length > 0);
         });
     });
+
+    describe('date-time', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats['date-time'], 'function');
+        });
+
+        it('returns no error for a valid ISO 8601 UTC date and time', function () {
+            assert.strictEqual(formats['date-time']('2014-02-11T15:19:59+00:00'), null);
+        });
+
+        it('it complains on garbage', function () {
+            assert(formats['date-time']('jsdfhdfsb hjsbdfhbdhbbfd hjsdb').length > 0);
+        });
+
+        it('complains on a date-time in a wrong format 1', function () {
+            assert(formats['date-time']('2014-02-11 16:31:14').length > 0);
+        });
+
+        it('complains on a date-time in a wrong format 1', function () {
+            assert(formats['date-time']('2013-W06-5T09:30:26 Z').length > 0);
+        });
+    });
 });
