@@ -1,0 +1,34 @@
+{
+  "name": "tv4-formats",
+  "version": "0.0.1",
+  "description": "Common JSON Schema string format constraints in the form of tv4 validator callbacks",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b ./tests",
+    "posttest": "jshint ./tests index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ikr/tv4-formats.git"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "validator",
+    "tv4",
+    "format"
+  ],
+  "author": "Ivan Krechetov <ivan.krechetov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ikr/tv4-formats/issues"
+  },
+  "homepage": "https://github.com/ikr/tv4-formats",
+  "devDependencies": {
+    "jshint": "~2.4.3",
+    "mocha": "~1.17.1"
+  },
+  "dependencies": {
+    "moment": "~2.5.1"
+  }
+}
