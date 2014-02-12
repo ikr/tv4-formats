@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/ikr/tv4-format.png)](http://travis-ci.org/ikr/tv4-format)
+[![Build Status](https://secure.travis-ci.org/ikr/tv4-formats.png)](http://travis-ci.org/ikr/tv4-formats)
 
 # About
 
