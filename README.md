@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/ikr/tv4-format.png)](http://travis-ci.org/ikr/tv4-format)
+
 # About
 
 Provides the implementation of common [JSON Schema](http://json-schema.org/) string format
