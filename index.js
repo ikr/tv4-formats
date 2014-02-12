@@ -38,4 +38,12 @@
 
         return 'URI expected';
     };
+
+    exports['credit-card-number'] = function (value) {
+        if (validator.isCreditCard(value)) {
+            return null;
+        }
+
+        return 'A valid credit card number format expected';
+    };
 }());

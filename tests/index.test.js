@@ -72,7 +72,25 @@ describe('tv4-formats', function () {
         });
 
         it('validates negatively', function () {
-            assert(formats.email('+41 43 000 00 00').length > 0);
+            assert(formats.uri('+41 43 000 00 00').length > 0);
+        });
+    });
+
+    describe('credit-card-number', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats['credit-card-number'], 'function');
+        });
+
+        it('validates positively', function () {
+            assert.strictEqual(formats['credit-card-number']('4242424242424242'), null);
+        });
+
+        it('validates negatively on garbage', function () {
+            assert(formats['credit-card-number']('MA CC NUM').length > 0);
+        });
+
+        it('validates negatively on a number violating the checksum', function () {
+            assert(formats['credit-card-number']('1000000000000000').length > 0);
         });
     });
 });
