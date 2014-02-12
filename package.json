@@ -1,6 +1,6 @@
 {
   "name": "tv4-formats",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Common JSON Schema string format constraints in the form of tv4 validator callbacks",
   "main": "index.js",
   "scripts": {
