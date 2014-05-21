@@ -31,11 +31,11 @@ describe('tv4-formats', function () {
             assert.strictEqual(typeof formats['date-time'], 'function');
         });
 
-        it('returns no error for a valid ISO 8601 UTC date and time with an TZ offset', function () {
+        it('returns no error for a valid ISO 8601 UTC date and time with a TZ offset', function () {
             assert.strictEqual(formats['date-time']('2014-02-11T15:19:59+00:00'), null);
         });
 
-        it('returns no error for a valid ISO 8601 UTC date and time', function () {
+        it('returns no error for a valid ISO 8601 UTC date and time with no TZ offset', function () {
             assert.strictEqual(formats['date-time']('2014-02-11T15:19:59Z'), null);
         });
 
