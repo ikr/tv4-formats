@@ -39,6 +39,10 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats['date-time']('2014-02-11T15:19:59Z'), null);
         });
 
+        it('returns no error for a valid ISO 8601 UTC date-time with a TZ offset and fractional seconds', function () {
+            assert.strictEqual(formats['date-time']('2014-02-11T15:19:59.000+00:00'), null);
+        });
+
         it('it complains on garbage', function () {
             assert(formats['date-time']('jsdfhdfsb hjsbdfhbdhbbfd hjsdb').length > 0);
         });
