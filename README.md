@@ -36,3 +36,4 @@ Here, the `format: 'date'` part of the schema validation is provided by `tv4-for
 * email
 * uri
 * credit-card-number
+* duration
