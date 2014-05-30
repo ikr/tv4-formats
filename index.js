@@ -47,4 +47,14 @@
 
         return 'A valid credit card number format expected';
     };
+
+    exports.duration = function (value) {
+        var amount = '[\\.,0-9]+',
+            regExp = new RegExp(
+                '^P(' + amount + 'Y|)(' + amount + 'M|)(' + amount + 'W|)(' + amount + 'D|)' +
+                '(T(' + amount + 'H|)(' + amount + 'M|)(' + amount + 'S|))?$'
+            );
+
+        return regExp.test(value) ? null : 'Iso8601 duration is expected';
+    };
 }());
