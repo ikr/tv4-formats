@@ -101,4 +101,31 @@ describe('tv4-formats', function () {
             assert(formats['credit-card-number']('1000000000000000').length > 0);
         });
     });
+
+    describe('duration', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats.duration, 'function');
+        });
+
+        [
+            'P1Y', 'P2M', 'P3W', 'P4D', // days
+            'PT1H', 'PT2M', 'PT3S', // times
+            'P3Y6M4DT12H30M5S', 'P23DT23H', 'P1Y3WT24H', // combined
+            'P0.5Y', 'P0,5Y', 'PT0.5H' // fractions
+        ].forEach(function (validDuration) {
+            it('validates valid "' + validDuration + '" durantion positively', function () {
+                assert.strictEqual(formats.duration(validDuration), null);
+            });
+        });
+
+        [
+            'P1', '2M', 'PW', 'P4D2', 'PT1Y', 'P2S', 'P3Y6M4D12H30M5S', 'PT0.5'
+        ].forEach(function (invalidDuration) {
+            it('validates invalid "' + invalidDuration + '" durantion negatively', function () {
+                assert(formats.duration(invalidDuration).length);
+            });
+        });
+
+
+    });
 });
