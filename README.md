@@ -31,9 +31,9 @@ Here, the `format: 'date'` part of the schema validation is provided by `tv4-for
 
 # Supported formats
 
-* date
-* date-time
+* date (YYYY-MM-DD)
+* date-time (for example, 2014-05-02T12:59:29+00:00)
 * email
 * uri
 * credit-card-number
-* duration
+* [duration](http://en.wikipedia.org/wiki/Iso8601#Durations) (for example, P1DT12H for 1.5 days)
