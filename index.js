@@ -3,9 +3,9 @@
 
     var moment = require('moment'),
         validator = require('validator'),
-        dateTimeRegExp = require('./dateTimeRegExp'),
-        uriRegExp = require('./uriRegExp'),
-        durationRegExp = require('./durationRegExp'),
+        dateTimeRegExp = require('./src/dateTimeRegExp'),
+        uriRegExp = require('./src/uriRegExp'),
+        durationRegExp = require('./src/durationRegExp'),
         dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/;
 
     exports.date = function (value) {
