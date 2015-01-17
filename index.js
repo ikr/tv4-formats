@@ -5,10 +5,11 @@
         validator = require('validator'),
         dateTimeRegExp = require('./dateTimeRegExp'),
         uriRegExp = require('./uriRegExp'),
-        durationRegExp = require('./durationRegExp');
+        durationRegExp = require('./durationRegExp'),
+        dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/;
 
     exports.date = function (value) {
-        if (/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(value) && moment(value, 'YYYY-MM-DD').isValid()) {
+        if (dateRegExp.test(value) && moment(value, 'YYYY-MM-DD').isValid()) {
             return null;
         }
 
