@@ -2,7 +2,8 @@
     'use strict';
 
     var moment = require('moment'),
-        validator = require('validator');
+        validator = require('validator'),
+        uriRegExp = require('./uriRegExp');
 
     exports.date = function (value) {
         if (/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(value) && moment(value, 'YYYY-MM-DD').isValid()) {
@@ -33,11 +34,19 @@
     };
 
     exports.uri = function (value) {
-        if (validator.isURL(value)) {
+        if (uriRegExp.test(value)) {
             return null;
         }
 
         return 'URI expected';
+    };
+
+    exports.url = function (value) {
+        if (validator.isURL(value)) {
+            return null;
+        }
+
+        return 'URL expected';
     };
 
     exports['credit-card-number'] = function (value) {

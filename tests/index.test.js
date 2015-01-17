@@ -79,8 +79,38 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats.uri('http://krechetov.net/'), null);
         });
 
+        it('accepts just a name', function () {
+            assert.strictEqual(formats.uri('foobar'), null);
+        });
+
+        it('accepts an absolute path', function () {
+            assert.strictEqual(formats.uri('/var/log/nginx/access.log'), null);
+        });
+
+        it('accepts a ./ relative path', function () {
+            assert.strictEqual(formats.uri('./export.xml'), null);
+        });
+
+        it('accepts a ../ relative path', function () {
+            assert.strictEqual(formats.uri('../export.xml'), null);
+        });
+
         it('validates negatively', function () {
-            assert(formats.uri('+41 43 000 00 00').length > 0);
+            assert(formats.uri('+41 43 000 00 00 Grüezi').length > 0);
+        });
+    });
+
+    describe('url', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats.url, 'function');
+        });
+
+        it('validates positively', function () {
+            assert.strictEqual(formats.url('https://ikr.su/'), null);
+        });
+
+        it('validates negatively', function () {
+            assert(formats.url('#clearly# :not: a URL').length > 0);
         });
     });
 
