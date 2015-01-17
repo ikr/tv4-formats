@@ -3,6 +3,7 @@
 
     var moment = require('moment'),
         validator = require('validator'),
+        dateTimeRegExp = require('./dateTimeRegExp'),
         uriRegExp = require('./uriRegExp');
 
     exports.date = function (value) {
@@ -15,8 +16,7 @@
 
     exports['date-time'] = function (value) {
         if (
-            /* jshint maxlen: 130 */
-            /[0-9]{4,}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]+|)(?:[+-][0-9]{2}:[0-9]{2}|Z)/.test(value) &&
+            dateTimeRegExp.test(value) &&
             moment(value).isValid()
         ) {
             return null;
@@ -64,6 +64,6 @@
                 '(T(' + amount + 'H|)(' + amount + 'M|)(' + amount + 'S|))?$'
             );
 
-        return regExp.test(value) ? null : 'Iso8601 duration is expected';
+        return regExp.test(value) ? null : 'ISO 8601 duration is expected';
     };
 }());
