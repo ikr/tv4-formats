@@ -13,6 +13,10 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats.date('2014-02-11'), null);
         });
 
+        it('returns no error when the value is not a string', function () {
+            assert.strictEqual(formats.date(null), null);
+        });
+
         it('complains about 30th of February, mentioning the expected format', function () {
             assert(/YYYY-MM-DD/.test(formats.date('2014-02-30')));
         });
@@ -43,6 +47,10 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats['date-time']('2014-02-11T15:19:59.000+00:00'), null);
         });
 
+        it('returns no error when the value is not a string', function () {
+            assert.strictEqual(formats['date-time'](null), null);
+        });
+
         it('it complains on garbage', function () {
             assert(formats['date-time']('jsdfhdfsb hjsbdfhbdhbbfd hjsdb').length > 0);
         });
@@ -67,6 +75,10 @@ describe('tv4-formats', function () {
 
         it('validates negatively', function () {
             assert(formats.email('#not_an_email').length > 0);
+        });
+
+        it('returns no error when the value is not a string', function () {
+            assert.strictEqual(formats.email(null), null);
         });
     });
 
@@ -95,6 +107,10 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats.uri('../export.xml'), null);
         });
 
+        it('returns no error when the value is not a string', function () {
+            assert.strictEqual(formats.uri(null), null);
+        });
+
         it('validates negatively', function () {
             assert(formats.uri('+41 43 000 00 00 Grüezi').length > 0);
         });
@@ -111,6 +127,10 @@ describe('tv4-formats', function () {
 
         it('validates negatively', function () {
             assert(formats.url('#clearly# :not: a URL').length > 0);
+        });
+
+        it('returns no error when the value is not a string', function () {
+            assert.strictEqual(formats.url(null), null);
         });
     });
 
@@ -156,6 +176,8 @@ describe('tv4-formats', function () {
             });
         });
 
-
+        it('returns no error when the value is not a string', function () {
+            assert.strictEqual(formats.duration(null), null);
+        });
     });
 });
