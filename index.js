@@ -9,7 +9,7 @@
         dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/;
 
     exports.date = function (value) {
-        if (dateRegExp.test(value) && moment(value, 'YYYY-MM-DD').isValid()) {
+        if (typeof value !== 'string' || (dateRegExp.test(value) && moment(value, 'YYYY-MM-DD').isValid())) {
             return null;
         }
 
@@ -18,8 +18,9 @@
 
     exports['date-time'] = function (value) {
         if (
+            typeof value !== 'string' || (
             dateTimeRegExp.test(value) &&
-            moment(value).isValid()
+            moment(value).isValid())
         ) {
             return null;
         }
@@ -28,7 +29,7 @@
     };
 
     exports.email = function (value) {
-        if (validator.isEmail(value)) {
+        if (typeof value !== 'string' || validator.isEmail(value)) {
             return null;
         }
 
@@ -36,7 +37,7 @@
     };
 
     exports.uri = function (value) {
-        if (uriRegExp.test(value)) {
+        if (typeof value !== 'string' || uriRegExp.test(value)) {
             return null;
         }
 
@@ -44,7 +45,7 @@
     };
 
     exports.url = function (value) {
-        if (validator.isURL(value)) {
+        if (typeof value !== 'string' || validator.isURL(value)) {
             return null;
         }
 
@@ -60,6 +61,6 @@
     };
 
     exports.duration = function (value) {
-        return durationRegExp.test(value) ? null : 'ISO 8601 duration is expected';
+        return (typeof value !== 'string' || durationRegExp.test(value)) ? null : 'ISO 8601 duration is expected';
     };
 }());
