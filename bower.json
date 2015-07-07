@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "moment": ">= 2.5.1",
-    "validator": ">= 3.27.0"
+    "validator-js": ">= 3.27.0"
   },
   "devDependencies": {
     "jscs": "^1.10.0",
