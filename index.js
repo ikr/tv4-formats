@@ -1,8 +1,16 @@
 (function () {
     'use strict';
 
+    var validator;
+    try {
+        /* NPM module name */
+        validator = require('validator');
+    }
+    catch (e) {
+        /* Bower module name */
+        validator = require('validator-js');
+    }
     var moment = require('moment'),
-        validator = require('validator'),
         dateTimeRegExp = require('./src/dateTimeRegExp'),
         uriRegExp = require('./src/uriRegExp'),
         durationRegExp = require('./src/durationRegExp'),
