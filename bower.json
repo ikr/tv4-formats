@@ -4,8 +4,8 @@
   "description": "Common JSON Schema string format constraints in the form of tv4 validator callbacks",
   "main": "index.js",
   "dependencies": {
-    "moment": "2.5.1",
-    "validator": "3.27.0"
+    "moment": ">= 2.5.1",
+    "validator": ">= 3.27.0"
   },
   "devDependencies": {
     "jscs": "^1.10.0",
