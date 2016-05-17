@@ -14,7 +14,7 @@
     }
     catch (e) {
         /* Bower module name */
-        validator = require('validator-js');
+        validator = require('validator-js' + '');
     }
 
     exports.date = function (value) {
