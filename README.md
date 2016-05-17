@@ -2,7 +2,7 @@
 
 # About
 
-Provides the implementation of common [JSON Schema](http://json-schema.org/) string format
+Provides an implementation of common [JSON Schema](http://json-schema.org/) string format
 constraints in the form of
 [tv4 validator callbacks.](https://github.com/geraintluff/tv4#addformatformat-validationfunction)
 Thus, it's a plug-in for [tv4.](https://github.com/geraintluff/tv4)
