@@ -31,8 +31,16 @@ describe('tv4-formats', function () {
             assert.strictEqual(typeof formats['date-time'], 'function');
         });
 
-        it('returns no error for a valid ISO 8601 UTC date and time with a TZ offset', function () {
+        it('returns no error for a valid ISO 8601 UTC date and time with a TZ offset 1', function () {
             assert.strictEqual(formats['date-time']('2014-02-11T15:19:59+00:00'), null);
+        });
+
+        it('returns no error for a valid ISO 8601 UTC date and time with a TZ offset 2', function () {
+            assert.strictEqual(formats['date-time']('2014-02-11T15:19:59+0000'), null);
+        });
+
+        it('returns no error for a valid ISO 8601 UTC date and time with a TZ offset 3', function () {
+            assert.strictEqual(formats['date-time']('2014-02-11T15:19:59+00'), null);
         });
 
         it('returns no error for a valid ISO 8601 UTC date and time with no TZ offset', function () {
@@ -51,8 +59,16 @@ describe('tv4-formats', function () {
             assert(formats['date-time']('2014-02-11 16:31:14').length > 0);
         });
 
-        it('complains on a date-time in a wrong format 1', function () {
+        it('complains on a date-time in a wrong format 2', function () {
             assert(formats['date-time']('2013-W06-5T09:30:26 Z').length > 0);
+        });
+
+        it('complains on a date-time in a wrong format 3', function () {
+            assert(formats['date-time']('2013-06-05T09:30:26-00000').length > 0);
+        });
+
+        it('complains on a date-time in a wrong format 4', function () {
+            assert(formats['date-time']('2013-06-05T09:30:26+000:0').length > 0);
         });
     });
 
