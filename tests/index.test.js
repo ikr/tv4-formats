@@ -174,4 +174,18 @@ describe('tv4-formats', function () {
 
 
     });
+
+    describe('guid', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats.guid, 'function');
+        });
+
+        it('validates positively', function () {
+            assert.strictEqual(formats.guid('34f8216d-b4b2-5d4d-b46b-ba1466ea3ab9'), null);
+        });
+
+        it('validates negatively', function () {
+            assert(formats.url('34f8216d-xxxx-5d4d-b46b-ba1466ea3ab9').length > 0);
+        });
+    });
 });
