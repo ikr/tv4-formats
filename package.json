@@ -24,7 +24,7 @@
     "url": "https://github.com/ikr/tv4-formats/issues"
   },
   "homepage": "https://github.com/ikr/tv4-formats",
-  "engine": "node >= 0.8",
+  "engine": "node >= 0.10",
   "devDependencies": {
     "jscs": "^3.0.3",
     "jshint": "^2.8.0",
