@@ -187,5 +187,9 @@ describe('tv4-formats', function () {
         it('validates negatively', function () {
             assert(formats.url('34f8216d-xxxx-5d4d-b46b-ba1466ea3ab9').length > 0);
         });
+
+        it('accepts optional curlies', function () {
+            assert.strictEqual(formats.guid('{7e39b1e6-23d1-11e6-8456-e75e8e0d2af6}'), null);
+        });
     });
 });
