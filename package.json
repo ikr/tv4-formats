@@ -26,12 +26,12 @@
   "homepage": "https://github.com/ikr/tv4-formats",
   "engine": "node >= 0.8",
   "devDependencies": {
-    "jscs": "^2.3.5",
+    "jscs": "^3.0.3",
     "jshint": "^2.8.0",
     "mocha": "^2.3.3"
   },
   "dependencies": {
     "moment": "^2.10.6",
-    "validator": "^4.2.0"
+    "validator": "^5.2.0"
   }
 }
