@@ -184,8 +184,12 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats.guid('34f8216d-b4b2-5d4d-b46b-ba1466ea3ab9'), null);
         });
 
-        it('validates negatively', function () {
-            assert(formats.url('34f8216d-xxxx-5d4d-b46b-ba1466ea3ab9').length > 0);
+        it('validates negatively 1', function () {
+            assert(formats.guid('34f8216d-xxxx-5d4d-b46b-ba1466ea3ab9').length > 0);
+        });
+
+        it('validates negatively 2', function () {
+            assert(formats.guid('ikr@ikr.su').length > 0);
         });
 
         it('accepts optional curlies', function () {
