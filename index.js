@@ -6,7 +6,9 @@
         dateTimeRegExp = require('./src/dateTimeRegExp'),
         uriRegExp = require('./src/uriRegExp'),
         durationRegExp = require('./src/durationRegExp'),
-        dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/;
+        dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/,
+        guidRegExp =
+            /^\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1}$/;
 
     try {
         /* NPM module name */
@@ -70,5 +72,9 @@
 
     exports.duration = function (value) {
         return durationRegExp.test(value) ? null : 'ISO 8601 duration is expected';
+    };
+
+    exports.guid = function (value) {
+        return guidRegExp.test(value) ? null : 'A valid GUID is expected';
     };
 }());
