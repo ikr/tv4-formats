@@ -28,7 +28,7 @@
   "devDependencies": {
     "jscs": "^3.0.3",
     "jshint": "^2.8.0",
-    "mocha": "^2.3.3"
+    "mocha": "^3.0.2"
   },
   "dependencies": {
     "moment": "^2.10.6",
