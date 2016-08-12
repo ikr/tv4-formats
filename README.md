@@ -37,6 +37,7 @@ Here, the `format: 'date'` part of the schema validation is provided by `tv4-for
 * date (YYYY-MM-DD)
 * date-time (for example, 2014-05-02T12:59:29+00:00)
 * [duration](http://en.wikipedia.org/wiki/Iso8601#Durations) (for example, P1DT12H for 1.5 days)
+* time-offset (same format as duration, but can also be negative: -P7D)
 * email
 * [guid](https://en.wikipedia.org/wiki/Globally_unique_identifier)
 * uri

@@ -6,6 +6,7 @@
         dateTimeRegExp = require('./src/dateTimeRegExp'),
         uriRegExp = require('./src/uriRegExp'),
         durationRegExp = require('./src/durationRegExp'),
+        timeOffsetRegExp = require('./src/timeOffsetRegExp'),
         dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/,
         guidRegExp =
             /^\{?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}?$/;
@@ -72,6 +73,10 @@
 
     exports.duration = function (value) {
         return durationRegExp.test(value) ? null : 'ISO 8601 duration is expected';
+    };
+
+    exports['time-offset'] = function (value) {
+        return timeOffsetRegExp.test(value) ? null : 'A signed ISO 8601 duration is expected';
     };
 
     exports.guid = function (value) {

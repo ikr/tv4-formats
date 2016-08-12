@@ -159,7 +159,7 @@ describe('tv4-formats', function () {
             'P3Y6M4DT12H30M5S', 'P23DT23H', 'P1Y3WT24H', // combined
             'P0.5Y', 'P0,5Y', 'PT0.5H' // fractions
         ].forEach(function (validDuration) {
-            it('validates valid "' + validDuration + '" durantion positively', function () {
+            it('validates valid "' + validDuration + '" duration positively', function () {
                 assert.strictEqual(formats.duration(validDuration), null);
             });
         });
@@ -167,12 +167,32 @@ describe('tv4-formats', function () {
         [
             'P1', '2M', 'PW', 'P4D2', 'PT1Y', 'P2S', 'P3Y6M4D12H30M5S', 'PT0.5'
         ].forEach(function (invalidDuration) {
-            it('validates invalid "' + invalidDuration + '" durantion negatively', function () {
+            it('validates invalid "' + invalidDuration + '" duration negatively', function () {
                 assert(formats.duration(invalidDuration).length);
             });
         });
+    });
 
+    describe('time-offset', function () {
+        it('is defined', function () {
+            assert.strictEqual(typeof formats['time-offset'], 'function');
+        });
 
+        [
+            'P1Y', '-P1Y3WT24H', 'P0.5Y', '-P0,5Y', 'PT0.5H'
+        ].forEach(function (validTimeOffset) {
+            it('validates valid "' + validTimeOffset + '" time offset positively', function () {
+                assert.strictEqual(formats['time-offset'](validTimeOffset), null);
+            });
+        });
+
+        [
+            'P1', '-PW', 'P4D2', '-P3Y6M4D12H30M5S'
+        ].forEach(function (invalidTimeOffset) {
+            it('validates invalid "' + invalidTimeOffset + '" time offset negatively', function () {
+                assert(formats.duration(invalidTimeOffset).length);
+            });
+        });
     });
 
     describe('guid', function () {
