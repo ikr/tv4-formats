@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var validator,
+    var validator = require('validator'),
         moment = require('moment'),
         dateTimeRegExp = require('./src/dateTimeRegExp'),
         uriRegExp = require('./src/uriRegExp'),
@@ -10,15 +10,6 @@
         dateRegExp = /^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/,
         guidRegExp =
             /^\{?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}?$/;
-
-    try {
-        /* NPM module name */
-        validator = require('validator');
-    }
-    catch (e) {
-        /* Bower module name */
-        validator = require('validator-js' + '');
-    }
 
     exports.date = function (value) {
         if (dateRegExp.test(value) && moment(value, 'YYYY-MM-DD').isValid()) {
