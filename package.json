@@ -28,7 +28,7 @@
   "devDependencies": {
     "jscs": "^3.0.3",
     "jshint": "^2.8.0",
-    "mocha": "^3.0.0",
+    "mocha": "^3.4.0",
     "webpack": "^2.4.1"
   },
   "dependencies": {
