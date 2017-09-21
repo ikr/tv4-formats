@@ -1,7 +1,21 @@
-(function () {
+(function (global, factory) {
     'use strict';
 
-    var durationRegExpString = require('./durationRegExpString');
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['./durationRegExpString'],
+            function (durationRegExpString) {
+                return factory(durationRegExpString);
+            });
+    } else if (typeof module !== 'undefined' && module.exports) {
+        // CommonJS. Define export.
+        module.exports = factory(require('./durationRegExpString'));
+    } else {
+        // Browser globals
+        global.durationRegExp = factory(global.durationRegExpString);
+    }
+}(this, function (durationRegExpString) {
+    'use strict';
 
-    module.exports = new RegExp(durationRegExpString);
-}());
+    return new RegExp(durationRegExpString);
+}));
