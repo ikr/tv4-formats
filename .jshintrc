@@ -107,5 +107,10 @@
     "maxdepth"      : 5,        // This option lets you control how nested do you want your blocks to be.
     "maxstatements" : 20,       // This option lets you set the max number of statements allowed per function.
     "maxcomplexity" : 10,       // Max cyclomatic complexity throughout your code.
-    "maxlen"        : 120       // This option lets you set the maximum length of a line.
+    "maxlen"        : 120,      // This option lets you set the maximum length of a line.
+
+    "globals"   : {
+        /* AMD Scripts */
+        "define"   : false
+      }
 }
