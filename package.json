@@ -29,10 +29,10 @@
     "jscs": "^3.0.3",
     "jshint": "^2.8.0",
     "mocha": "^3.0.0",
-    "webpack": "^2.4.1"
+    "webpack": "^3.6.0"
   },
   "dependencies": {
     "moment": "^2.10.6",
-    "validator": "^7.0.0"
+    "validator": "^8.2.0"
   }
 }
