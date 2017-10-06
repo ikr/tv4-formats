@@ -47,7 +47,7 @@
     };
 
     exports.url = function (value) {
-        if (validator.isURL(value)) {
+        if (validator.isURL(value, { 'require_tld': false })) {
             return null;
         }
 
