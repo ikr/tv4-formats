@@ -125,6 +125,10 @@ describe('tv4-formats', function () {
             assert.strictEqual(formats.url('https://ikr.su/'), null);
         });
 
+        it('validates positively', function () {
+            assert.strictEqual(formats.url('http://localhost:3000/'), null);
+        });
+
         it('validates negatively', function () {
             assert(formats.url('#clearly# :not: a URL').length > 0);
         });
