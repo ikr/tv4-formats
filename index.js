@@ -47,7 +47,9 @@
     };
 
     exports.url = function (value) {
-        if (validator.isURL(value, { 'require_tld': false })) {
+        var tldRequired = value.indexOf('localhost') === -1;
+
+        if (validator.isURL(value, { 'require_tld': tldRequired })) {
             return null;
         }
 
