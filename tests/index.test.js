@@ -121,15 +121,19 @@ describe('tv4-formats', function () {
             assert.strictEqual(typeof formats.url, 'function');
         });
 
-        it('validates positively', function () {
+        it('validates positively 1', function () {
             assert.strictEqual(formats.url('https://ikr.su/'), null);
         });
 
-        it('validates positively', function () {
+        it('validates positively 2', function () {
             assert.strictEqual(formats.url('http://localhost:3000/'), null);
         });
 
-        it('validates negatively', function () {
+        it('validates negatively 1', function () {
+            assert(formats.url('http://asdf:3000/').length > 0);
+        });
+
+        it('validates negatively 2', function () {
             assert(formats.url('#clearly# :not: a URL').length > 0);
         });
     });
